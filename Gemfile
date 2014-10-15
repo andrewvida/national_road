@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.5'
 
 gem 'pg'
+gem 'rails_12factor', group: :production
 
 gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '>= 1.3.0'
