@@ -13,6 +13,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'slim-rails'
 
+group :test, :development do
+  gem 'jasmine-rails'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
