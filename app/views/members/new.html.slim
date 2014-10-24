@@ -1,0 +1,33 @@
+= form_for :member, url: members_path do |f|
+  p
+    = f.label :name
+    = f.text_field :name
+  p
+    = f.label :address
+    = f.text_field :address
+  p
+    = f.label :city
+    = f.text_field :city
+  p
+    = f.label :state
+    = f.text_field :state
+  p
+    = f.label :zipcode
+    = f.text_field :zipcode
+  p
+    = f.label :phone
+    = f.text_field :phone
+  p
+    = f.label :email
+    = f.text_field :email
+  p
+    = f.label :spouse_name
+    = f.text_field :spouse_name
+  p
+    = f.label :year_joined
+    = f.number_field :year_joined
+  p
+    = f.label :dues_paid
+    = f.check_box :dues_paid
+  p
+    = f.submit
