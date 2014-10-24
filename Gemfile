@@ -15,6 +15,7 @@ gem 'slim-rails'
 
 group :test, :development do
   gem 'jasmine-rails'
+  gem 'pry'
 end
 
 # Use ActiveModel has_secure_password
