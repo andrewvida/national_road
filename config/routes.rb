@@ -3,4 +3,6 @@ NationalRoad::Application.routes.draw do
 
   root 'home#index'
   resources :members
+
+  get 'dashboard', to: 'dashboard#index'
 end
