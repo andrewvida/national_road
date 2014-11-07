@@ -7,7 +7,7 @@ ul.breadcrumbs
     a href="#" Edit
   
 h1 Edit Member
-= form_for :member, url: members_path(@article), method: :patch do |f|
+= form_for @member do |f|
   .row
     .large-12.columns
       = f.label :name
@@ -48,4 +48,7 @@ h1 Edit Member
   .row
     .large-12.columns
       = f.submit(class: "button round")
+  .row
+    .large-12.columns
+      = link_to("Back", members_path)
 
