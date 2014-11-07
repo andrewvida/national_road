@@ -1,37 +1,53 @@
-= form_for @member do |f|
+= form_for @member, data: {abide:''} do |f|
   .row
     .large-12.columns
-      = f.label :name
-      = f.text_field :name
+      label Name
+        <small> required </small>
+      = f.text_field :name, required:""
+      small.error Member name is required.
   .row
     .large-12.columns
-      = f.label :address
-      = f.text_field :address
+      label Address
+        <small> required </small>
+      = f.text_field :address, required:""
+      small.error Address is required.
   .row
     .large-4.columns
-      = f.label :city
-      = f.text_field :city
+      label City
+        <small> required </small>
+      = f.text_field :city, required:""
+      small.error City is required.
     .large-4.columns
-      = f.label :state
-      = f.text_field :state
+      label State
+        <small> required </small>
+      = f.text_field :state, required:""
+      small.error State is required.
     .large-4.columns
-      = f.label :zipcode
-      = f.text_field :zipcode
+      label Zipcode
+        <small> required </small>
+      = f.text_field :zipcode, required:""
+      small.error Zipcode is required.
   .row
     .large-6.columns
-      = f.label :phone
-      = f.text_field :phone
+      label Phone
+        <small> required </small>
+      = f.text_field :phone, required:""
+      small.error Phone number is required.
     .large-6.columns
-      = f.label :email
-      = f.text_field :email
+      label Email Address
+        <small> required </small>
+      = f.text_field :email, required: "", pattern: "email"
+      small.error Email Address is required and must be a valid email address.
   .row
     .large-12.columns
-      = f.label :spouse_name
+      = f.label :spouse_name, "Spouse Name"
       = f.text_field :spouse_name
   .row
     .large-12.columns
-      = f.label :year_joined
-      = f.number_field :year_joined
+      label Year Joined
+        <small> required </small>
+      = f.number_field :year_joined, required:""
+      small.error Year joined is required.
   .row
     .large-12.columns
       = f.label :dues_paid?
