@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
   def new
+    @member = Member.new
   end
 
   def create
@@ -20,10 +21,10 @@ class MembersController < ApplicationController
   def edit
     @member = Member.find(params[:id])
   end
-  
+
   def update
    @member = Member.find(params[:id])
-   
+
    if @member.update(member_params)
      redirect_to members_path
    else
