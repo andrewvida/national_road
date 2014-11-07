@@ -6,38 +6,46 @@ ul.breadcrumbs
   li.current
     a href="#" Edit
   
-h1 Editing Member
+h1 Edit Member
 = form_for :member, url: members_path(@article), method: :patch do |f|
-  p
-    = f.label :name
-    = f.text_field :name
-  p
-    = f.label :address
-    = f.text_field :address
-  p
-    = f.label :city
-    = f.text_field :city
-  p
-    = f.label :state
-    = f.text_field :state
-  p
-    = f.label :zipcode
-    = f.text_field :zipcode
-  p
-    = f.label :phone
-    = f.text_field :phone
-  p
-    = f.label :email
-    = f.text_field :email
-  p
-    = f.label :spouse_name
-    = f.text_field :spouse_name
-  p
-    = f.label :year_joined
-    = f.number_field :year_joined
-  p
-    = f.label :dues_paid?
-    = f.check_box :dues_paid
-  p
-    = f.submit
+  .row
+    .large-12.columns
+      = f.label :name
+      = f.text_field :name
+  .row
+    .large-12.columns
+      = f.label :address
+      = f.text_field :address
+  .row
+    .large-4.columns
+      = f.label :city
+      = f.text_field :city
+    .large-4.columns
+      = f.label :state
+      = f.text_field :state
+    .large-4.columns
+      = f.label :zipcode
+      = f.text_field :zipcode
+  .row
+    .large-6.columns
+      = f.label :phone
+      = f.text_field :phone
+    .large-6.columns
+      = f.label :email
+      = f.text_field :email
+  .row
+    .large-12.columns
+      = f.label :spouse_name
+      = f.text_field :spouse_name
+  .row
+    .large-12.columns
+      = f.label :year_joined
+      = f.number_field :year_joined
+  .row
+    .large-12.columns
+      = f.label :dues_paid?
+      = f.check_box :dues_paid
+  .row
+    .large-12.columns
+      = f.submit(class: "button round")
 
