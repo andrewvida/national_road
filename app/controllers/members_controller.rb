@@ -7,11 +7,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
 
     @member.save
-    redirect_to @member
-  end
-
-  def show
-    @member = Member.find(params[:id])
+    redirect_to members_path
   end
 
   def index
