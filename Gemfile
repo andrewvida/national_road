@@ -12,10 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'slim-rails'
-gem 'bourbon'
-gem 'neat'
-gem 'bitters'
-gem 'refills'
+gem 'foundation-rails'
 
 group :test, :development do
   gem 'jasmine-rails'
