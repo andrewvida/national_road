@@ -4,31 +4,37 @@ ul.breadcrumbs
   li.current 
     a href="#" Members
 
-h1 Club Members
-
-
-table
-  tr
-    th Name
-    th Address
-    th City
-    th State
-    th Zipcode
-    th Phone Number
-    th Email
-    th Spouse Name
-    th Year Joined
-    th Dues Paid?
-  - @members.each do |member|
-    tr
-      td = member.name
-      td = member.address
-      td = member.city
-      td = member.state
-      td = member.zipcode
-      td = member.phone
-      td = member.email
-      td = member.spouse_name
-      td = member.year_joined
-      td = member.dues_paid
-      td = link_to("Edit", edit_member_path(member))
+.row
+  .large-12.columns
+    h1 Club Members
+    hr
+.row
+  .large-12.columns
+    table
+      thead
+        tr
+          th Name
+          th Address
+          th City
+          th State
+          th Zipcode
+          th Phone Number
+          th Email
+          th Spouse Name
+          th Year Joined
+          th Dues Paid?
+          th Actions
+      tbody
+        - @members.each do |member|
+          tr
+            td = member.name
+            td = member.address
+            td = member.city
+            td = member.state
+            td = member.zipcode
+            td = member.phone
+            td = member.email
+            td = member.spouse_name
+            td = member.year_joined
+            td = member.dues_paid
+            td = link_to("Edit", edit_member_path(member))
