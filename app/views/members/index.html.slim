@@ -1,7 +1,7 @@
 ul.breadcrumbs
   li
     = link_to("Dashboard", dashboard_path)
-  li.current 
+  li.current
     a href="#" Members
 
 .row
@@ -39,5 +39,5 @@ ul.breadcrumbs
             td = member.email
             td = member.spouse_name
             td = member.year_joined
-            td = member.dues_paid
+            td = member.dues_paid ? "Yes" : "No"
             td = link_to("Edit", edit_member_path(member))

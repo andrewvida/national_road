@@ -1,41 +1,34 @@
 = form_for @member, data: {abide:''} do |f|
   .row
     .large-12.columns
-      label Name
-        <small> required </small>
+      label Name <small> required </small>
       = f.text_field :name, required:""
       small.error Member name is required.
   .row
     .large-12.columns
-      label Address
-        <small> required </small>
+      label Address <small> required </small>
       = f.text_field :address, required:""
       small.error Address is required.
   .row
     .large-4.columns
-      label City
-        <small> required </small>
+      label City <small> required </small>
       = f.text_field :city, required:""
       small.error City is required.
     .large-4.columns
-      label State
-        <small> required </small>
-      = f.text_field :state, required:""
+      label State <small> required </small>
+      = f.select :state, options_for_select(["OH", "IN", "KY"]), required:""
       small.error State is required.
     .large-4.columns
-      label Zipcode
-        <small> required </small>
+      label Zipcode <small> required </small>
       = f.text_field :zipcode, required:""
       small.error Zipcode is required.
   .row
     .large-6.columns
-      label Phone
-        <small> required </small>
-      = f.text_field :phone, required:""
+      label Phone <small> required </small>
+      = f.text_field :phone, placeholder:"123-456-7890", required:""
       small.error Phone number is required.
     .large-6.columns
-      label Email Address
-        <small> required </small>
+      label Email Address <small> required </small>
       = f.text_field :email, required: "", pattern: "email"
       small.error Email Address is required and must be a valid email address.
   .row
@@ -44,9 +37,8 @@
       = f.text_field :spouse_name
   .row
     .large-12.columns
-      label Year Joined
-        <small> required </small>
-      = f.number_field :year_joined, required:""
+      label Year Joined <small> required </small>
+      = f.select :year_joined, ((DateTime.now.year - 10)..DateTime.now.year), required:""
       small.error Year joined is required.
   .row
     .large-12.columns
@@ -54,7 +46,7 @@
       = f.check_box :dues_paid
   .row
     .large-12.columns
-      = f.submit(class: "button round")
+      = f.submit(class: "small button round")
   .row
     .large-12.columns
       = link_to("< Back", members_path)
