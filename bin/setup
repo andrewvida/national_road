@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+# Set up Rails app. Run this script immediately after cloning the codebase.
+
+# Exit if any subcommand fails
+set -e
+
+# Set up Ruby dependencies via Bundler
+bundle install
+
+# # Set up configurable environment variables
+# if [ ! -f .env ]; then
+#   cp .sample.env .env
+# fi
+
+# Set up database and add development data
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:fixtures:load
+
+# Set up staging and production apps
+git remote add staging git@heroku.com:nrcc-staging.git || true
+echo 'You are a collaborator on the "nrcc-staging" Heroku app'
+
+git remote add production git@heroku.com:nationalroadcorvetteclub.git || true
+echo 'You are a collaborator on the "nrcc-production" Heroku app'

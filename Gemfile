@@ -1,32 +1,31 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.5'
+ruby '2.1.4'
 
-gem 'pg'
-gem 'rails_12factor', group: :production
-
-gem 'sass-rails', '~> 4.0.2'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
-gem 'slim-rails'
+gem 'coffee-rails'
 gem 'foundation-rails'
+gem 'jbuilder'
+gem 'jquery-rails'
+gem 'pg'
+gem 'rails', '4.1.8'
+gem 'sass-rails', '~> 4.0.5'
+gem 'slim-rails'
+gem 'turbolinks'
+gem 'uglifier'
 
-group :test, :development do
-  gem 'jasmine-rails'
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+group :development, :test do
+  gem 'awesome_print'
+  gem 'byebug'
+  gem 'dotenv-rails'
   gem 'pry'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+group :staging, :production do
+ gem 'rails_12factor'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
